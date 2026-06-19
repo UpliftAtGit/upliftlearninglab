@@ -1,14 +1,380 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Uplift Learning Lab</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uplift Learning Lab - Uplifting Minds Through Art of Doing</title>
+  <!-- favicon image -->
+  <link rel="icon" href="Uplift Learning Lab WBG.jpeg" type="image/jpeg">
+  <style>
+    :root{--nav:#ffffff;--gold:#d4af37;--text:#061227}
+    html, body{height:100%;}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#fff;color:var(--text);}
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.96);color:white;backdrop-filter:blur(12px);z-index:10}
+    .topbar{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 20px}
+    .logo{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:160px}
+    .logo img{height:64px;width:160px;object-fit:cover;border-radius:10px}
+    .logo .tagline{max-width:160px;white-space:normal;font-size:0.85rem;line-height:1.2;}
+    .tagline{max-width:100%;text-align:center;word-wrap:break-word}
+    .site-title{display:none}
+    nav{margin-left:auto}
+    .menu{display:flex;gap:12px}
+    .menu a{color:#0b1c3d;text-decoration:none;padding:8px 12px;border-radius:6px;font-weight:600}
+    .menu a:hover{background:rgba(255,255,255,0.06)}
+    main{max-width:1100px;margin:28px auto;padding:0 20px}
+    .hero{min-height:auto;padding-top:84px}
+    .carousel{position:relative;width:100%;height:420px;overflow:hidden;border-radius:0;background:#f8fafc}
+    .slides{display:flex;transition:transform 0.4s ease;height:100%}
+    .slide{min-width:100%;padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;height:100%}
+    .slide h2{margin:0;color:var(--nav)}
+    .slide p{margin:0;color:#374151;line-height:1.5}
+    .slide img{width:100%;height:100%;object-fit:cover;border-radius:0}
+    .carousel-nav{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2}
+    .carousel-nav button{width:12px;height:12px;border:none;border-radius:50%;background:rgba(13,110,253,0.22);cursor:pointer}
+    .carousel-nav button.active{background:var(--gold)}
+    .hero-content{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);z-index:2;background:transparent;padding:16px;border-radius:18px;max-width:420px;text-align:center;box-shadow:none}
+    .hero-content h1{margin:0;color:var(--nav)}
+    .hero-content .tag{font-size:22px;color:var(--nav);font-weight:600}
+    .hero-content .hero-description{margin:16px 0 24px;color:#374151;max-width:420px}
+    .cta-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border:none;border-radius:8px;background:var(--gold);color:#061227;font-weight:700;text-decoration:none;cursor:pointer}
+    .programs{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{border:1px solid #e9e9ef;border-radius:8px;padding:14px;background:#fff}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:6px}
+    footer{max-width:1100px;margin:36px auto;padding:12px 20px;color:#6b7280;font-size:14px;border-top:1px solid #e5e7eb;text-align:center}
+    @media (max-width:600px){.topbar{padding:12px}.site-title{display:none}}
+  </style>
 </head>
 <body>
-    <h1>Hello, Folks</h1>
-    <p>Thanks for choosing Uplift Learning Lab to uplift your IT career.</p>
+  <header>
+    <div class="topbar">
+      <div class="logo">
+        <img alt="Uplift Learning Lab WBG" src="Uplift Learning Lab WBG.jpeg">
+        <div style="text-align:center">
+          <div class="site-title">Uplift Learning Lab</div>
+          <!--<div class="tagline">Uplifting Minds Through Art of Doing</div> -->
+        </div>
+      </div>
+      <nav>
+        <div class="menu">
+          <a href="#home">Home</a>
+          <a href="#programs">Programs</a>
+          <a href="#about">About Us</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="carousel" aria-label="Program highlights">
+        <div class="slides" id="carouselSlides">
+          <div class="slide">
+            <!--<h2>Core value: Learn by Doing</h2>-->
+            <img alt="Learn By Doing" src="Learn By Doing.png" style="width:100%;height:100%;object-fit:cover;border-radius:0;">
+            <!--<p>You don't just sit back and read about concepts or watch tutorials. You dive straight into writing code, building practical tools, and physically breaking things so you can figure out how to fix them. Hands-on application is the default state of learning here.</p>-->
+          </div>
+          <div class="slide">
+            <!--<h2>Core value: Peer-to-Peer Learning</h2>-->
+            <img alt="Peer-to-Peer Learning" src="Peer-to-Peer Learning.png" style="width:100%;height:100%;object-fit:cover;border-radius:0;">
+            <!--<p>The lab thrives as a collaborative ecosystem rather than a competitive sandbox. By reviewing your peers' code, actively debugging together, and explaining your logic to someone else, you reinforce your own practical understanding while helping the community rise together.</p>-->
+          </div>
+          <div class="slide">
+            <!--<h2>Core value: Mastery Based Progression</h2>-->
+            <img alt="Mastery Based Progression" src="Mastery Based Progression.png" style="width:100%;height:100%;object-fit:cover;border-radius:0;">
+            <!--<p>There is no point in moving to advanced modules if the foundational code isn't solid. You stick with a concept, keep "doing" it, and refine your approach until you completely master it, ensuring you never build complex projects on top of a shaky foundation.</p>-->
+          </div>
+        </div>
+        <div class="hero-content">
+          <a class="cta-button" href="#programs">Explore Programs</a>
+        </div>
+        <div class="carousel-nav">
+          <button type="button" class="carousel-dot active" data-index="0"></button>
+          <button type="button" class="carousel-dot" data-index="1"></button>
+          <button type="button" class="carousel-dot" data-index="2"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <h2 style="color:var(--nav)">Programs</h2>
+      <div class="programs">
+        <div class="card">
+          <img src="Full Stack Developer.png" alt="Full Stack Developer">
+          <h3 style="margin:12px 0 6px">Full Stack Developer</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px;font-size:.95rem;color:#374151">
+            <span style="background:#081a41;color:#ffffff;padding:6px 10px;border-radius:999px">Duration: 6 Months</span>
+            <span style="background:#081a41;color:#ffffff;padding:6px 10px;border-radius:999px">Level: Advanced</span>
+            <span style="background:#081a41;color:#ffffff;padding:6px 10px;border-radius:999px">Classroom</span>
+          </div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Full%20Stack%20Development" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Apply Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Full%20Stack%20Development" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Refer a Friend</a>
+            <a href="#learn-fullstack" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:8px;background:#fff;color:var(--text);border:1px solid #d1d5db;text-decoration:none;font-weight:700;">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Everyone Can Code.png" alt="Everyone Can Code">
+          <h3 style="margin:12px 0 6px">Everyone Can Code</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px;font-size:.95rem;color:#374151">
+            <span style="background:#081a41;color:#ffffff;padding:6px 10px;border-radius:999px">Duration: 4 Months</span>
+            <span style="background:#081a41;color:#ffffff;padding:6px 10px;border-radius:999px">Level: Advanced</span>
+            <span style="background:#081a41;color:#ffffff;padding:6px 10px;border-radius:999px">Online</span>
+          </div>
+          
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Everyone%20Can%20Code" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Apply Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Everyone%20Can%20Code" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Refer a Friend</a>
+            <a href="#learn-everyone" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:8px;background:#fff;color:var(--text);border:1px solid #d1d5db;text-decoration:none;font-weight:700;">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn-fullstack" style="margin-top:28px">
+      <div style="max-width:1100px;margin:0 auto;display:grid;gap:28px;padding:0 16px;">
+        <div style="display:grid;gap:24px;padding:32px;border:1px solid #e5e7eb;border-radius:24px;background:#ffffff;box-shadow:0 20px 40px rgba(15,23,42,0.08);">
+          <div style="display:grid;gap:18px;">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;">
+              <div style="max-width:680px;">
+                <p style="margin:0;color:#0b1c3d;font-weight:700;letter-spacing:.03em;font-size:.95rem;text-transform:uppercase;">Full Stack Developer</p>
+                <h2 style="margin:8px 0 0;font-size:2rem;color:#0b1c3d;line-height:1.1;">from Code Fundamentals to Agentic AI</h2>
+                <p style="margin:18px 0 0;color:#475569;line-height:1.8;max-width:760px;">As a fresh graduate stepping into a competitive job market or looking for career advancement or transition, landing your first IT role requires more than just knowing a single programming language—it demands an understanding of how real-world software is built from the ground up, this program is engineered specifically to transform your academic knowledge into production-ready expertise, systematically preparing you for every phase of the software development lifecycle.</p>
+              </div>
+              <div style="display:grid;gap:14px;min-width:220px;">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:16px;">
+                  <p style="margin:0;color:#64748b;font-size:.85rem;">Duration</p>
+                  <p style="margin:8px 0 0;color:#0b1c3d;font-size:1.1rem;font-weight:700;">6 Months</p>
+                </div>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:16px;">
+                  <p style="margin:0;color:#64748b;font-size:.85rem;">Mode</p>
+                  <p style="margin:8px 0 0;color:#0b1c3d;font-size:1.1rem;font-weight:700;">Classroom</p>
+                </div>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:16px;">
+                  <p style="margin:0;color:#64748b;font-size:.85rem;">Level</p>
+                  <p style="margin:8px 0 0;color:#0b1c3d;font-size:1.1rem;font-weight:700;">Advanced</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+              <div style="padding:22px;border:1px solid #e5e7eb;border-radius:20px;background:#f8fafc;">
+                <h3 style="margin:0 0 12px;color:#0b1c3d;font-size:1rem;">Why this program</h3>
+                <ul style="margin:0;padding-left:18px;color:#475569;line-height:1.8;">
+                  
+                  <li>Driven by "Learn By Doing": We reject passive, lecture-heavy learning. Your entire 6-month journey is spent with your fingers on the keyboard, building real-world architecture, breaking code, and debugging in real time. You don't just memorize concepts—you build muscle memory by executing them.</li>
+                  <li>Most entry-level resumes look identical with basic college projects. By building microservices, cloud-deployed apps, and autonomous Agentic AI workflows, your GitHub portfolio will instantly stand out to technical interviewers and pass automated screening filters.</li>
+                  <li>Master the Interviews, Not Just the Syntax: By writing code every single day, you develop the deep algorithmic thinking required to clear rigorous technical rounds. You won't just know what a framework does; you will be able to confidently explain your code, architectural choices, and problem-solving process to any hiring manager. </li>
+                </ul>
+              </div>
+              <div style="padding:22px;border:1px solid #e5e7eb;border-radius:20px;background:#f8fafc;">
+                <h3 style="margin:0 0 12px;color:#0b1c3d;font-size:1rem;">What you will learn</h3>
+                <ul style="margin:0;padding-left:18px;color:#475569;line-height:1.8;">
+                  <li> Learn to think like an engineer from day one by mastering language-agnostic logic and writing clean, readable, and highly optimized code.</li>
+                  <li>Get comfortable designing, optimizing, and scaling backend data layers using both relational (MySQL) and non-relational (MongoDB) databases.</li>
+                  <li>Build high-performance, secure server-side applications and microservices using industry-standard frameworks like Spring Boot and Node.js.</li>
+                  <li>Learn to build interactive, highly responsive user interfaces using React and Angular, making your applications seamless for end users.</li>
+                  <li>Stand out to hiring managers by knowing how to actually deploy, manage, and scale your applications on cloud giants like AWS, Google Cloud, and Azure.</li>
+                  <li>Future-proof your resume by learning to design intelligent, autonomous AI systems and advanced agentic workflows—a skill set that will put you miles ahead of other entry-level applicants.</li>
+                  <!-- <li>Modern front-end frameworks and responsive UI development</li> -->
+                  <!--<li>Backend architecture, API design, and database integration</li>-->
+                  <!--<li>Testing, CI/CD, cloud deployment, and production readiness</li>-->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <nav style="display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;">
+            <a href="#fullstack-curriculum" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Curriculum</a>
+            <a href="#fullstack-eligibility" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Eligibility</a>
+            <a href="#fullstack-fees" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Fees</a>
+            <a href="#fullstack-dates" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Important Dates</a>
+          </nav>
+
+
+          <div id="fullstack-curriculum" style="display:grid;gap:12px;">
+            <h3>Curriculum</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Language-agnostic coding: Compare and contrast Java, JavaScript, and Python for language fundamentals, OOP, data structures, exception handling, threads, file I/O, and language-exclusive features.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Git, GitHub, Collaboration & Portfolio: Master version control, branching strategies, team collaboration workflows, and build a professional portfolio with capstone projects.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Databases: Deep expertise in SQL (relational) and NoSQL databases—designing schemas, indexing, query optimization, and scaling strategies for MySQL and MongoDB.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Backend & Microservices: Build modular server-side systems with Spring Boot and Node.js, design RESTful microservices, implement authentication, orchestrate service communication, and integrate data stores.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Frontend: Responsive UIs, React components, state management, and accessibility.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">DevOps: Version control, testing, CI/CD pipelines, and cloud deployment.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Agentic AI Skills: Design and implement intelligent autonomous systems and advanced AI workflows.</div>
+            </div>
+          </div>
+
+          <div id="fullstack-eligibility" style="display:grid;gap:12px;">
+            <h3>Eligibility</h3>
+            <p style="color:#374151;max-width:900px;line-height:1.8;">Anyone who is willing to commit 6 - 8 hours a day for 6 months.</p>
+          </div>
+
+
+          <div id="fullstack-fees" style="display:grid;gap:12px;">
+            <h3>Fees</h3>
+            <p style="color:#374151;max-width:900px;line-height:1.8;">Please contact us for fee details at Email:info@upliftlearninglab.com or WhatsApp: +91 9000231332</p>
+          </div>
+
+          <div id="fullstack-dates" style="display:grid;gap:12px;margin-bottom:24px;">
+            <h3>Important Dates</h3>
+            <p style="color:#374151;max-width:900px;line-height:1.8;">New Batch, First of Every Month.</p>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Full%20Stack%20Development" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Apply Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Full%20Stack%20Development" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Refer a Friend</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn-everyone" style="margin-top:28px">
+      <div style="max-width:1100px;margin:0 auto;display:grid;gap:28px;padding:0 16px;">
+        <div style="display:grid;gap:24px;padding:32px;border:1px solid #e5e7eb;border-radius:24px;background:#ffffff;box-shadow:0 20px 40px rgba(15,23,42,0.08);">
+          <div style="display:grid;gap:18px;">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;">
+              <div style="max-width:680px;">
+                <p style="margin:0;color:#0b1c3d;font-weight:700;letter-spacing:.03em;font-size:.95rem;text-transform:uppercase;">Everyone Can Code</p>
+                <h2 style="margin:8px 0 0;font-size:2rem;color:#0b1c3d;line-height:1.1;">Master Language-Agnostic Coding and Problem-Solving</h2>
+                <p style="margin:18px 0 0;color:#475569;line-height:1.8;max-width:760px;">Everyone Can Code wipes away coding anxiety by replacing intimidating syntax memorization with a logic-first, "Learn By Doing" approach. By mastering the universal, language-agnostic fundamentals of programming, you build the core engineering infrastructure needed to effortlessly pick up any new framework or language down the line. Solving over 200+ curated logic problems ensures you develop the unshakeable confidence and problem-solving mastery required to crack both campus and lateral technical interview assessments.</p>
+              </div>
+              <div style="display:grid;gap:14px;min-width:220px;">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:16px;">
+                  <p style="margin:0;color:#64748b;font-size:.85rem;">Duration</p>
+                  <p style="margin:8px 0 0;color:#0b1c3d;font-size:1.1rem;font-weight:700;">4 Months</p>
+                </div>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:16px;">
+                  <p style="margin:0;color:#64748b;font-size:.85rem;">Mode</p>
+                  <p style="margin:8px 0 0;color:#0b1c3d;font-size:1.1rem;font-weight:700;">Online</p>
+                </div>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:16px;">
+                  <p style="margin:0;color:#64748b;font-size:.85rem;">Level</p>
+                  <p style="margin:8px 0 0;color:#0b1c3d;font-size:1.1rem;font-weight:700;">Advanced</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+              <div style="padding:22px;border:1px solid #e5e7eb;border-radius:20px;background:#f8fafc;">
+                <h3 style="margin:0 0 12px;color:#0b1c3d;font-size:1rem;">Why this program</h3>
+                <ul style="margin:0;padding-left:18px;color:#475569;line-height:1.8;">
+                  <li> "Learn By Doing" Lab Experience:  Your learning happens entirely in real-time, guided labs within structured environments with expert mentorship to ensure you build practical coding muscle memory from day one.</li>
+
+                  <li>Logic-First, Language-Agnostic Training: Instead of trapping you inside a single framework, this program teaches you universal coding concepts that apply across Java, Python, and JavaScript. You will master the underlying engineering logic, making you highly adaptable to any tech stack.</li>
+
+                  <li>A Highly Structured Support System: No fragmented paths or getting stuck alone. This program provides a completely clear roadmap consisting of high-impact instructor-led sessions perfectly paired with mentor-assisted lab sessions for consistent, daily practice.</li>
+                </ul>
+              </div>
+              <div style="padding:22px;border:1px solid #e5e7eb;border-radius:20px;background:#f8fafc;">
+                <h3 style="margin:0 0 12px;color:#0b1c3d;font-size:1rem;">What you will learn</h3>
+                <ul style="margin:0;padding-left:18px;color:#475569;line-height:1.8;">
+                  <li>Advanced Problem-Solving Mastery: You will graduate having successfully tackled and solved over 200+ carefully curated logic problems, giving you the deep technical confidence and critical thinking required to crack rigorous IT interview rounds.</li>
+                  <li>Production-Ready Communication: Through our "Present, Discuss, Grow" framework, you will gain the ability to present your technical solutions clearly, explain your architectural approach to senior developers, and successfully collaborate in professional peer reviews.</li>
+                  <li>Cross-Functional Adaptability: You will emerge with a highly versatile portfolio that proves you can build clean, structured code and apply universal design principles to any real-world scenario—regardless of the area of discipline you started from.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <nav style="display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;">
+            <a href="#everyone-curriculum" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Curriculum</a>
+            <a href="#everyone-eligibility" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Eligibility</a>
+            <a href="#everyone-fees" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Fees</a>
+            <a href="#everyone-dates" style="color:#0b1c3d;text-decoration:none;padding:10px 14px;border-radius:8px;background:#f3f4f6;">Important Dates</a>
+          </nav>
+
+
+          <div id="everyone-curriculum" style="display:grid;gap:12px;">
+            <h3>Curriculum</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Language-agnostic fundamentals: Compare and contrast Java, JavaScript and Python for programming fundamentals, OOPS, and core data structures and collections.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Advanced language features: Explore exception handling, threading, file handling, and language-exclusive capabilities to build robust applications.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Practice & Labs: 100 demonstrated problems plus 150+ mentor-assisted lab problems to reinforce learning and build confidence.</div>
+              <div style="padding:18px;border:1px solid #e5e7eb;border-radius:18px;background:#ffffff;">Git, GitHub portfolio, collaboration: Learn version control workflows, repository management, branching and pull requests, and how to craft a polished GitHub portfolio for teamwork and hiring.</div>
+            </div>
+          </div>
+
+          <div id="everyone-eligibility" style="display:grid;gap:12px;">
+            <h3>Eligibility</h3>
+            <p style="color:#374151;max-width:900px;line-height:1.8;">All individuals, especially those eager but intimidated to take their first step into programming..</p>
+          </div>
+
+
+          <div id="everyone-fees" style="display:grid;gap:12px;">
+            <h3>Fees</h3>
+            <p style="color:#374151;max-width:900px;line-height:1.8;">Please contact us for fee details at Email:info@upliftlearninglab.com or WhatsApp: +91 9000231332</p>
+          </div>
+
+          <div id="everyone-dates" style="display:grid;gap:12px;margin-bottom:24px;">
+            <h3>Important Dates</h3>
+            <p style="color:#374151;max-width:900px;line-height:1.8;">Please contact us to know about upcoming batches at Email:info@upliftlearninglab.com or WhatsApp: +91 9000231332</p>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Everyone%20Can%20Code" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Apply Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKvFfQlvdnz0xg8umK5b3DxG_j9bBd4PlDQXLQAKbBudY4eg/viewform?usp=pp_url&entry.1176413363=Everyone%20Can%20Code" target="_blank" class="cta-button" style="padding:12px 18px;font-size:.95rem;">Refer a Friend</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section id="about" style="margin-top:28px;display:grid;gap:20px;padding:24px;background:linear-gradient(180deg, #eff6ff 0%, #eef2ff 100%);border-radius:24px;box-shadow:0 18px 40px rgba(15,23,42,0.08);">
+      <div style="display:grid;gap:14px;padding:24px;background:rgba(255,255,255,0.98);border-radius:20px;box-shadow:0 12px 24px rgba(15,23,42,0.08);border:1px solid rgba(99,102,241,0.14);">
+        <p style="color:#0f172a;margin-top:12px;font-weight:600;">We believe in and abide by these principles — learning by doing, involving learners, and valuing practice over pure theory.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px;">
+          <div style="padding:16px;background:linear-gradient(135deg,#fff7ed 0%,#fffbeb 100%);border-radius:12px;box-shadow:0 8px 20px rgba(15,23,42,0.06);">
+            <p style="margin:0;font-weight:600;color:#92400e;">"For the things we have to learn before we can do them, we learn by doing them."</p>
+            <p style="margin:8px 0 0;color:#7c2d12;font-style:italic;">— Aristotle</p>
+          </div>
+
+          <div style="padding:16px;background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 100%);border-radius:12px;box-shadow:0 8px 20px rgba(15,23,42,0.06);">
+            <p style="margin:0;font-weight:600;color:#1e3a8a;">"Tell me and I forget. Teach me and I remember. Involve me and I learn."</p>
+            <p style="margin:8px 0 0;color:#1e40af;font-style:italic;">— Benjamin Franklin</p>
+          </div>
+
+          <div style="padding:16px;background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 100%);border-radius:12px;box-shadow:0 8px 20px rgba(15,23,42,0.06);">
+            <p style="margin:0;font-weight:600;color:#065f46;">"An ounce of practice is generally worth more than a ton of theory."</p>
+            <p style="margin:8px 0 0;color:#064e3b;font-style:italic;">— E.F. Schumacher</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div style="display:grid;gap:12px;padding:24px;background:linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);border-radius:20px;box-shadow:0 12px 24px rgba(15,23,42,0.07);">
+          <h3 style="margin:0;color:#1d4ed8;">Address</h3>
+          <p style="color:#1f2937;line-height:1.8;font-weight:500;">Uplift Learning Lab<br>1st floor, Cohort Coworking Space, M R Prime, <br> Survey No. 6, BP Raju Marg, Whitefield's, Kondapur,<br> Hyderabad,Telangana, 500081<br>India</p>
+        </div>
+        <div style="display:grid;gap:12px;padding:24px;background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);border-radius:20px;box-shadow:0 12px 24px rgba(15,23,42,0.07);">
+          <h3 style="margin:0;color:#047857;">Connect With Us</h3>
+          <p style="color:#1f2937;line-height:1.8;margin:0;"><strong>Email:</strong> info@upliftlearninglab.com</p>
+          <p style="color:#1f2937;line-height:1.8;margin:0;"><strong>WhatsApp:</strong> +91 9000231332</p>
+          <p style="color:#1f2937;line-height:1.8;margin:0;"><strong>Instagram:</strong> @upliftlearninglab</p>
+          <!-- <p style="color:#1f2937;line-height:1.8;margin:0;"><strong>Facebook:</strong> uplift-learning-lab</p> -->
+          <!-- <p style="color:#1f2937;line-height:1.8;margin:0;"><strong>LinkedIn:</strong> uplift-learning-lab</p> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Uplift Learning Lab — Uplifting Minds Through Art of Doing
+  </footer>
+  <script>
+    const slides = document.querySelector('#carouselSlides');
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        dots.forEach((btn) => btn.classList.remove('active'));
+        dot.classList.add('active');
+        const index = Number(dot.dataset.index);
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      });
+    });
+  </script>
 </body>
 </html>
